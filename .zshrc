@@ -119,25 +119,28 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# GIT dotfiles ALIAS
+alias config='/usr/bin/git --git-dir=/home/loesch/.dotfiles/ --work-tree=/home/loesch'
 
 #########
 ## ROS ##
 #########
 source /opt/ros/kinetic/setup.zsh
-export CURRENT_CMAKE_DEVEL_DIR="$(catkin locate --workspace ~/Developer/ROS/WS/bagfile_ws --devel)"
+export CURRENT_CMAKE_DEVEL_DIR="$(catkin locate --workspace ~/Developer/ROS/WS/julius_ws --devel)"
+export CURRENT_CMAKE_BUILD_DIR="$(catkin locate --workspace ~/Developer/ROS/WS/julius_ws --build)"
 source ${CURRENT_CMAKE_DEVEL_DIR}/setup.zsh
-#source /home/loesch/Developer/ROS/WS/julius_ws/devel_cb/setup.zsh
 #export ROS_HOSTNAME=localhost
 
 ############
 ## ROS_IP ##
 ############
 # automatically get IP
- export ROS_IP="$(ifconfig | grep -m1 'inet addr:192' | cut  -c 21- | cut -d " " -f1)"
+# export ROS_IP="$(ifconfig | grep -m1 'inet addr:192' | cut  -c 21- | cut -d " " -f1)"
 #---------------------------
 # export ROS_IP="192.168.1.211" # toshiba eth
 # export ROS_IP="192.168.1.212" # toshiba wifi
- export ROS_IP="192.168.1.213" # lenovo eth
+ export ROS_IP="192.168.1.213" # lenovo eth0
 # export ROS_IP="192.168.1.214" # lenovo wifi
 
 ####################
@@ -150,20 +153,22 @@ source ${CURRENT_CMAKE_DEVEL_DIR}/setup.zsh
 # export ROS_MASTER_URI=http://192.168.1.214:11311 # lenovo wifi
 # export ROS_MASTER_URI=http://192.168.1.10:11311  # julius
 
-
-
 export EDITOR='nano'
 
-#-----------------------#
+
+#########################
 # QT Creator ROS plugin #
-#-----------------------#
+#########################
 #source /opt/qt57/bin/qt57-env.sh
-export CURRENT_CMAKE_BUILD_DIR="$(catkin locate --workspace ~/Developer/ROS/WS/bagfile_ws --build)"
 
 # GAZEBO
 export LC_NUMERIC=C # Workaround wegen Fehlermeldung
-#export GAZEBO_MASTER_URI=http://192.168.1.10:11311 # julius
 
+# export GAZEBO_IP=192.168.1.211 # toshiba eth
+# export GAZEBO_IP=192.168.1.212 # toshiba wifi
+ export GAZEBO_IP=192.168.1.213 # lenovo eth0
+# export GAZEBO_IP=192.168.1.214 # lenovo wifi
 
-# GIT dotfiles
-alias config='/usr/bin/git --git-dir=/home/loesch/.dotfiles/ --work-tree=/home/loesch'
+#export GAZEBO_MASTER_URI=http://192.168.1.10:11345 # julius
+#export GAZEBO_MASTER_URI=http://192.168.1.199:11345 # pm
+export GAZEBO_MASTER_URI=http://$GAZEBO_IP:11345 # own
