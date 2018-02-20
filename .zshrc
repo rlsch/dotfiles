@@ -2,12 +2,12 @@
  export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/loesch/.oh-my-zsh
+  export ZSH=/Volumes/Storage/Users/robertlosch/.oh-my-zsh
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt beep extendedglob nomatch
+unsetopt beep extendedglob nomatch
 unsetopt appendhistory autocd notify
 bindkey -e # emacs
 # End of lines configured by zsh-newuser-install
@@ -121,54 +121,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 # GIT dotfiles ALIAS
-alias config='/usr/bin/git --git-dir=/home/loesch/.dotfiles/ --work-tree=/home/loesch'
+alias config='/usr/bin/git --git-dir=/Volumes/Storage/Users/robertlosch/.dotfiles/ --work-tree=/Volumes/Storage/Users/robertlosch'
 
-#########
-## ROS ##
-#########
-source /opt/ros/kinetic/setup.zsh
-export CURRENT_CMAKE_DEVEL_DIR="$(catkin locate --workspace ~/Developer/ROS/WS/julius_ws --devel)"
-export CURRENT_CMAKE_BUILD_DIR="$(catkin locate --workspace ~/Developer/ROS/WS/julius_ws --build)"
-source ${CURRENT_CMAKE_DEVEL_DIR}/setup.zsh
-#export ROS_HOSTNAME=localhost
-
-############
-## ROS_IP ##
-############
-# automatically get IP
-# export ROS_IP="$(ifconfig | grep -m1 'inet addr:192' | cut  -c 21- | cut -d " " -f1)"
-#---------------------------
-# export ROS_IP="192.168.1.211" # toshiba eth
-# export ROS_IP="192.168.1.212" # toshiba wifi
- export ROS_IP="192.168.1.213" # lenovo eth0
-# export ROS_IP="192.168.1.214" # lenovo wifi
-
-####################
-## ROS_MASTER_URI ##
-####################
- export ROS_MASTER_URI=http://$ROS_IP:11311
-# export ROS_MASTER_URI=http://192.168.1.211:11311 # toshiba eth
-# export ROS_MASTER_URI=http://192.168.1.212:11311 # tishiba wifi
-# export ROS_MASTER_URI=http://192.168.1.213:11311 # lenovo eth
-# export ROS_MASTER_URI=http://192.168.1.214:11311 # lenovo wifi
-# export ROS_MASTER_URI=http://192.168.1.10:11311  # julius
-
-export EDITOR='nano'
-
-
-#########################
-# QT Creator ROS plugin #
-#########################
-#source /opt/qt57/bin/qt57-env.sh
-
-# GAZEBO
-export LC_NUMERIC=C # Workaround wegen Fehlermeldung
-
-# export GAZEBO_IP=192.168.1.211 # toshiba eth
-# export GAZEBO_IP=192.168.1.212 # toshiba wifi
- export GAZEBO_IP=192.168.1.213 # lenovo eth0
-# export GAZEBO_IP=192.168.1.214 # lenovo wifi
-
-#export GAZEBO_MASTER_URI=http://192.168.1.10:11345 # julius
-#export GAZEBO_MASTER_URI=http://192.168.1.199:11345 # pm
-export GAZEBO_MASTER_URI=http://$GAZEBO_IP:11345 # own
