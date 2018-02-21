@@ -122,6 +122,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # GIT dotfiles ALIAS
 alias config='/usr/bin/git --git-dir=/home/loesch/.dotfiles/ --work-tree=/home/loesch'
+alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
 
 #########
 ## ROS ##
