@@ -123,11 +123,11 @@ source $ZSH/oh-my-zsh.sh
 #
 # GIT dotfiles ALIAS
 alias config='/usr/bin/git --git-dir=/home/loesch/.dotfiles/ --work-tree=/home/loesch'
-#
 alias muxify='/home/loesch/Developer/muxify/muxify2.py'
 alias urdf-viewer='/home/loesch/Developer/scripts/urdf-viewer.sh'
 alias spawn-urdf='/home/loesch/Developer/scripts/spawn-urdf.sh'
-#
+alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+
 #########
 ## ROS ##
 #########
