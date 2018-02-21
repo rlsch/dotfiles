@@ -122,4 +122,5 @@ source $ZSH/oh-my-zsh.sh
 #
 # GIT dotfiles ALIAS
 alias config='/usr/bin/git --git-dir=/Volumes/Storage/Users/robertlosch/.dotfiles/ --work-tree=/Volumes/Storage/Users/robertlosch'
-
+alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
+alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
