@@ -34,7 +34,8 @@ promptinit
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="robertloesch"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -122,7 +123,11 @@ source $ZSH/oh-my-zsh.sh
 #
 # GIT dotfiles ALIAS
 alias config='/usr/bin/git --git-dir=/home/loesch/.dotfiles/ --work-tree=/home/loesch'
-
+#
+alias muxify='/home/loesch/Developer/muxify/muxify2.py'
+alias urdf-viewer='/home/loesch/Developer/scripts/urdf-viewer.sh'
+alias spawn-urdf='/home/loesch/Developer/scripts/spawn-urdf.sh'
+#
 #########
 ## ROS ##
 #########
@@ -136,22 +141,22 @@ source ${CURRENT_CMAKE_DEVEL_DIR}/setup.zsh
 ## ROS_IP ##
 ############
 # automatically get IP
-# export ROS_IP="$(ifconfig | grep -m1 'inet addr:192' | cut  -c 21- | cut -d " " -f1)"
+ export ROS_IP="$(ifconfig | grep -m1 'inet addr:192' | cut  -c 21- | cut -d " " -f1)"
 #---------------------------
 # export ROS_IP="192.168.1.211" # toshiba eth
 # export ROS_IP="192.168.1.212" # toshiba wifi
- export ROS_IP="192.168.1.213" # lenovo eth0
+# export ROS_IP="192.168.1.213" # lenovo eth0
 # export ROS_IP="192.168.1.214" # lenovo wifi
 
 ####################
 ## ROS_MASTER_URI ##
 ####################
- export ROS_MASTER_URI=http://$ROS_IP:11311
+# export ROS_MASTER_URI=http://$ROS_IP:11311
 # export ROS_MASTER_URI=http://192.168.1.211:11311 # toshiba eth
 # export ROS_MASTER_URI=http://192.168.1.212:11311 # tishiba wifi
 # export ROS_MASTER_URI=http://192.168.1.213:11311 # lenovo eth
 # export ROS_MASTER_URI=http://192.168.1.214:11311 # lenovo wifi
-# export ROS_MASTER_URI=http://192.168.1.10:11311  # julius
+ export ROS_MASTER_URI=http://192.168.1.10:11311  # julius main
 
 export EDITOR='nano'
 
@@ -168,7 +173,11 @@ export LC_NUMERIC=C # Workaround wegen Fehlermeldung
 # export GAZEBO_IP=192.168.1.212 # toshiba wifi
  export GAZEBO_IP=192.168.1.213 # lenovo eth0
 # export GAZEBO_IP=192.168.1.214 # lenovo wifi
+# export GAZEBO_IP=192.168.178.28
 
 #export GAZEBO_MASTER_URI=http://192.168.1.10:11345 # julius
 #export GAZEBO_MASTER_URI=http://192.168.1.199:11345 # pm
 export GAZEBO_MASTER_URI=http://$GAZEBO_IP:11345 # own
+
+# for urdf-viz
+source ~/.cargo/env 
