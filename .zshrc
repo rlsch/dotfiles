@@ -127,6 +127,7 @@ alias muxify='/home/loesch/Developer/muxify/muxify2.py'
 alias urdf-viewer='/home/loesch/Developer/scripts/urdf-viewer.sh'
 alias spawn-urdf='/home/loesch/Developer/scripts/spawn-urdf.sh'
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+alias gitlatex="/home/loesch/Developer/git-latexdiff/git-latexdiff"
 
 #########
 ## ROS ##
@@ -141,22 +142,22 @@ source ${CURRENT_CMAKE_DEVEL_DIR}/setup.zsh
 ## ROS_IP ##
 ############
 # automatically get IP
- export ROS_IP="$(ifconfig | grep -m1 'inet addr:192' | cut  -c 21- | cut -d " " -f1)"
+ export ROS_IP=$(myip)
 #---------------------------
-# export ROS_IP="192.168.1.211" # toshiba eth
+# export ROS_IP="192.168.1.211" # toshiba eth0
 # export ROS_IP="192.168.1.212" # toshiba wifi
-# export ROS_IP="192.168.1.213" # lenovo eth0
-# export ROS_IP="192.168.1.214" # lenovo wifi
+# export ROS_IP="192.168.1.213" # lenovo  eth0
+# export ROS_IP="192.168.1.214" # lenovo  wifi
 
 ####################
 ## ROS_MASTER_URI ##
 ####################
-# export ROS_MASTER_URI=http://$ROS_IP:11311
+ export ROS_MASTER_URI=http://$ROS_IP:11311
 # export ROS_MASTER_URI=http://192.168.1.211:11311 # toshiba eth
 # export ROS_MASTER_URI=http://192.168.1.212:11311 # tishiba wifi
 # export ROS_MASTER_URI=http://192.168.1.213:11311 # lenovo eth
 # export ROS_MASTER_URI=http://192.168.1.214:11311 # lenovo wifi
- export ROS_MASTER_URI=http://192.168.1.10:11311  # julius main
+# export ROS_MASTER_URI=http://192.168.1.10:11311  # julius main
 
 export EDITOR='nano'
 
