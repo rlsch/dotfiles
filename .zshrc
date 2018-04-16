@@ -128,6 +128,8 @@ alias urdf-viewer='/home/loesch/Developer/scripts/urdf-viewer.sh'
 alias spawn-urdf='/home/loesch/Developer/scripts/spawn-urdf.sh'
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
 alias gitlatex="/home/loesch/Developer/git-latexdiff/git-latexdiff"
+alias openfolder='nautilus .'
+alias k='k -h'
 
 #########
 ## ROS ##
@@ -170,10 +172,11 @@ export EDITOR='nano'
 # GAZEBO
 export LC_NUMERIC=C # Workaround wegen Fehlermeldung
 
+ export GAZEBO_IP=$(myip)
+# export GAZEBO_IP=192.168.1.213 # lenovo eth0
+# export GAZEBO_IP=192.168.1.214 # lenovo wifi
 # export GAZEBO_IP=192.168.1.211 # toshiba eth
 # export GAZEBO_IP=192.168.1.212 # toshiba wifi
- export GAZEBO_IP=192.168.1.213 # lenovo eth0
-# export GAZEBO_IP=192.168.1.214 # lenovo wifi
 # export GAZEBO_IP=192.168.178.28
 
 #export GAZEBO_MASTER_URI=http://192.168.1.10:11345 # julius
