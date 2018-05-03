@@ -2,7 +2,7 @@
  export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/Volumes/Storage/Users/robertlosch/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -12,7 +12,7 @@ unsetopt appendhistory autocd notify
 bindkey -e # emacs
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Volumes/Storage/Users/robertloesch/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 # Command completion
 autoload -Uz compinit
@@ -121,7 +121,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 # GIT dotfiles ALIAS
-alias config='/usr/bin/git --git-dir=/Volumes/Storage/Users/robertlosch/.dotfiles/ --work-tree=/Volumes/Storage/Users/robertlosch'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
 alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
