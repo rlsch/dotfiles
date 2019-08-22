@@ -2,7 +2,7 @@
  export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/loesch/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -12,7 +12,7 @@ unsetopt appendhistory autocd notify
 bindkey -e # emacs
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/loesch/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 # Command completion
 autoload -Uz compinit
@@ -122,7 +122,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 # GIT dotfiles ALIAS
-alias config='/usr/bin/git --git-dir=/home/loesch/.dotfiles/ --work-tree=/home/loesch'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias muxify='/home/loesch/Developer/muxify/muxify2.py'
 alias urdf-viewer='/home/loesch/Developer/scripts/urdf-viewer.sh'
 alias spawn-urdf='/home/loesch/Developer/scripts/spawn-urdf.sh'
@@ -130,13 +130,16 @@ alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-
 alias gitlatex="/home/loesch/Developer/git-latexdiff/git-latexdiff"
 alias openfolder='nautilus .'
 alias k='k -h'
+alias nz='nano ~/.zshrc'
+alias sz='source ~/.zshrc'
 
 #########
 ## ROS ##
 #########
 source /opt/ros/kinetic/setup.zsh
-export CURRENT_CMAKE_DEVEL_DIR="$(catkin locate --workspace ~/Developer/ROS/WS/julius_ws --devel)"
-export CURRENT_CMAKE_BUILD_DIR="$(catkin locate --workspace ~/Developer/ROS/WS/julius_ws --build)"
+export ROS_WS=~/Developer/ROS/WS/julius_ws
+export CURRENT_CMAKE_DEVEL_DIR="$(catkin locate --workspace $ROS_WS --devel)"
+export CURRENT_CMAKE_BUILD_DIR="$(catkin locate --workspace $ROS_WS --build)"
 source ${CURRENT_CMAKE_DEVEL_DIR}/setup.zsh
 #export ROS_HOSTNAME=localhost
 
@@ -145,6 +148,7 @@ source ${CURRENT_CMAKE_DEVEL_DIR}/setup.zsh
 ############
 # automatically get IP
  export ROS_IP=$(myip)
+# export ROS_IP=127.0.0.1
 #---------------------------
 # export ROS_IP="192.168.1.211" # toshiba eth0
 # export ROS_IP="192.168.1.212" # toshiba wifi
@@ -154,12 +158,13 @@ source ${CURRENT_CMAKE_DEVEL_DIR}/setup.zsh
 ####################
 ## ROS_MASTER_URI ##
 ####################
- export ROS_MASTER_URI=http://$ROS_IP:11311
+# export ROS_MASTER_URI=http://$ROS_IP:11311
 # export ROS_MASTER_URI=http://192.168.1.211:11311 # toshiba eth
 # export ROS_MASTER_URI=http://192.168.1.212:11311 # tishiba wifi
 # export ROS_MASTER_URI=http://192.168.1.213:11311 # lenovo eth
 # export ROS_MASTER_URI=http://192.168.1.214:11311 # lenovo wifi
-# export ROS_MASTER_URI=http://192.168.1.10:11311  # julius main
+ export ROS_MASTER_URI=http://192.168.1.10:11311  # julius main jm
+# export ROS_MASTER_URI=http://192.168.1.11:11311  # alex main
 
 export EDITOR='nano'
 
@@ -173,15 +178,25 @@ export EDITOR='nano'
 export LC_NUMERIC=C # Workaround wegen Fehlermeldung
 
  export GAZEBO_IP=$(myip)
+# export GAZEBO_IP=127.0.0.1
 # export GAZEBO_IP=192.168.1.213 # lenovo eth0
 # export GAZEBO_IP=192.168.1.214 # lenovo wifi
 # export GAZEBO_IP=192.168.1.211 # toshiba eth
 # export GAZEBO_IP=192.168.1.212 # toshiba wifi
 # export GAZEBO_IP=192.168.178.28
 
-#export GAZEBO_MASTER_URI=http://192.168.1.10:11345 # julius
-#export GAZEBO_MASTER_URI=http://192.168.1.199:11345 # pm
-export GAZEBO_MASTER_URI=http://$GAZEBO_IP:11345 # own
+# export GAZEBO_MASTER_URI=http://192.168.1.10:11345  # julius
+# export GAZEBO_MASTER_URI=http://192.168.1.199:11345 # pm
+# export GAZEBO_MASTER_URI=http://192.168.1.203:11345 # tb
+ export GAZEBO_MASTER_URI=http://$GAZEBO_IP:11345     # own
 
 # for urdf-viz
 source ~/.cargo/env 
+
+# PYTHON
+# export PYTHONPATH=/usr/local/lib/python3.5/dist-packages:/usr/local/lib/python2.7/dist-packages
+# :$PYTHONPATH
+
+# CUDA
+export PATH=/usr/local/cuda-10.1/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH
