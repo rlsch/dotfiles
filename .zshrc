@@ -136,18 +136,18 @@ alias sz='source ~/.zshrc'
 #########
 ## ROS ##
 #########
-source /opt/ros/kinetic/setup.zsh
-export ROS_WS=~/Developer/ROS/WS/julius_ws
-export CURRENT_CMAKE_DEVEL_DIR="$(catkin locate --workspace $ROS_WS --devel)"
-export CURRENT_CMAKE_BUILD_DIR="$(catkin locate --workspace $ROS_WS --build)"
-source ${CURRENT_CMAKE_DEVEL_DIR}/setup.zsh
+#source /opt/ros/kinetic/setup.zsh
+#export ROS_WS=~/Developer/ROS/WS/julius_ws
+#export CURRENT_CMAKE_DEVEL_DIR="$(catkin locate --workspace $ROS_WS --devel)"
+#export CURRENT_CMAKE_BUILD_DIR="$(catkin locate --workspace $ROS_WS --build)"
+#source ${CURRENT_CMAKE_DEVEL_DIR}/setup.zsh
 #export ROS_HOSTNAME=localhost
 
 ############
 ## ROS_IP ##
 ############
 # automatically get IP
- export ROS_IP=$(myip)
+# export ROS_IP=$(myip)
 # export ROS_IP=127.0.0.1
 #---------------------------
 # export ROS_IP="192.168.1.211" # toshiba eth0
@@ -175,9 +175,9 @@ export EDITOR='nano'
 #source /opt/qt57/bin/qt57-env.sh
 
 # GAZEBO
-export LC_NUMERIC=C # Workaround wegen Fehlermeldung
+#export LC_NUMERIC=C # Workaround wegen Fehlermeldung
 
- export GAZEBO_IP=$(myip)
+# export GAZEBO_IP=$(myip)
 # export GAZEBO_IP=127.0.0.1
 # export GAZEBO_IP=192.168.1.213 # lenovo eth0
 # export GAZEBO_IP=192.168.1.214 # lenovo wifi
@@ -188,10 +188,10 @@ export LC_NUMERIC=C # Workaround wegen Fehlermeldung
 # export GAZEBO_MASTER_URI=http://192.168.1.10:11345  # julius
 # export GAZEBO_MASTER_URI=http://192.168.1.199:11345 # pm
 # export GAZEBO_MASTER_URI=http://192.168.1.203:11345 # tb
- export GAZEBO_MASTER_URI=http://$GAZEBO_IP:11345     # own
+# export GAZEBO_MASTER_URI=http://$GAZEBO_IP:11345     # own
 
 # for urdf-viz
-source ~/.cargo/env 
+#source ~/.cargo/env 
 
 # PYTHON
 # export PYTHONPATH=/usr/local/lib/python3.5/dist-packages:/usr/local/lib/python2.7/dist-packages
