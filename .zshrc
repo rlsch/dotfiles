@@ -130,3 +130,6 @@ alias k='k -h'
 alias nz='nano ~/.zshrc'
 alias sz='source ~/.zshrc'
 export PATH="/usr/local/sbin:$PATH"
+
+# macports
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
