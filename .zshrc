@@ -88,6 +88,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 plugins+=(k)
 plugins+=(wd)
+plugins+=(autoupdate)
 
 source $ZSH/oh-my-zsh.sh
 
