@@ -12,7 +12,7 @@ unsetopt appendhistory autocd notify
 bindkey -e # emacs
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/loesch/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 # Command completion
 autoload -Uz compinit
