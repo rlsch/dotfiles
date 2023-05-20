@@ -3,7 +3,8 @@ local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 if [[ -z "$SSH_CLIENT" ]]; then
         prompt_host=""
 else
-        prompt_host=%{$fg_bold[white]%}@%{$reset_color$fg[yellow]%}$(hostname -s)
+        prompt_host=%{$fg[yellow]%}%n%{$fg_bold[white]%}@%{$reset_color$fg[yellow]%}$(hostname 
+-s)
 fi
 
 #PROMPT='%{$fg_bold[cyan]%}%3c/
