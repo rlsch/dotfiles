@@ -89,6 +89,11 @@ ZSH_THEME="robertloesch"
 plugins=(git)
 plugins+=(k)
 plugins+=(wd)
+plugins+=(autoupdate)
+plugins+=(colored-man-pages)
+plugins+=(gitignore)
+#plugins+=(zsh-autosuggestions)
+#plugins+=(zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,12 +131,26 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias muxify='/home/loesch/Developer/muxify/muxify2.py'
 alias urdf-viewer='/home/loesch/Developer/scripts/urdf-viewer.sh'
 alias spawn-urdf='/home/loesch/Developer/scripts/spawn-urdf.sh'
-alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+alias myip="ip addr | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+#alias mypublicip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias mypublicip='curl icanhazip.com'
 alias gitlatex="/home/loesch/Developer/git-latexdiff/git-latexdiff"
 alias openfolder='nautilus .'
-alias k='k -h'
+alias update='sudo apt update && apt list --upgradable'
+#alias k='k -ah'
 alias nz='nano ~/.zshrc'
 alias sz='source ~/.zshrc'
+alias zoombgr='/home/loesch/Developer/scripts/zoombgr.sh'
+alias resetaudio='pulseaudio -k && sudo alsa force-reload'
+alias audioreset='pulseaudio -k && sudo alsa force-reload'
+alias keyboardapplefunctionkeys="echo '2' | sudo tee -a /sys/module/hid_apple/parameters/fnmode > /dev/null"
+alias df='df -h -x tmpfs -x devtmpfs -x squashfs'
+alias sound='paplay /usr/share/sounds/ubuntu/stereo/system-ready.ogg'
+alias imgdiff='python3 /home/loesch/Developer/scripts/imgdiff.py'
+#alias pwd='echo -n $(pwd) | xclip -sel clip -i > /dev/null && echo $(pwd)'
+
+#eval "$(zoxide init --cmd cd zsh)"
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #########
 ## ROS ##
