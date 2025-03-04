@@ -88,6 +88,7 @@ ZSH_THEME="robertloesch"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 plugins+=(k)
+plugins+=(rl)
 plugins+=(wd)
 plugins+=(autoupdate)
 plugins+=(colored-man-pages)
