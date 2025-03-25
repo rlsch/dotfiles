@@ -149,6 +149,8 @@ alias df='df -h -x tmpfs -x devtmpfs -x squashfs'
 alias sound='paplay /usr/share/sounds/ubuntu/stereo/system-ready.ogg'
 alias imgdiff='python3 /home/loesch/Developer/scripts/imgdiff.py'
 #alias pwd='echo -n $(pwd) | xclip -sel clip -i > /dev/null && echo $(pwd)'
+alias compress='echo tar -cvzf examples.tar.gz examples'
+alias uncompress='echo tar -xvzf examples.tar.gz'
 
 #eval "$(zoxide init --cmd cd zsh)"
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
